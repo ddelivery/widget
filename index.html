@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Пример интеграции</title>
+    <script type="text/javascript" src="//sdk2.dev.ddelivery.ru/assets/ddelivery.js"></script>
+</head>
+<body>
+
+<div id="widget"></div>
+
+<script type="text/javascript">
+    var products = [
+        {
+            id: '122',
+            name: 'Some piece of products',
+            price: 524,
+            width: 10,
+            height: 10,
+            length: 0,
+            weight: 1,
+            quantity: 2,
+            sku: 'SKU PRODUCT'
+        },
+        {
+            id: '123',
+            name: 'Some piece of products',
+            price: 524,
+            width: 10,
+            height: 10,
+            length: 10,
+            weight: 1,
+            quantity: 2,
+            sku: 'SKU PRODUCT'
+        }
+    ];
+
+    DDeliveryWidget.init('widget', {
+        products: products,
+        id: 201,
+        width: 500,
+        height: 550,
+        env: DDeliveryWidget.ENV_DEV
+    });
+
+</script>
+</body>
