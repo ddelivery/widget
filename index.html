@@ -3,10 +3,12 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Пример интеграции</title>
-    <script type="text/javascript" src="//sdk2.dev.ddelivery.ru/assets/ddelivery.js"></script>
+    <script type="text/javascript" src="http://sdk2.dev.ddelivery.ru/assets/ddelivery.js"></script>
 </head>
 <body>
-
+<div style="padding: 20px; margin-top: 20px; border: 1px solid black">
+    <button id="send_order">Отправить</button>
+</div>
 <div id="widget"></div>
 
 <script type="text/javascript">
@@ -41,7 +43,26 @@
         width: 500,
         height: 550,
         env: DDeliveryWidget.ENV_DEV
+    }, {
+        price: function (data) {
+            console.log('price');
+            console.log(data);
+        },
+        change: function (data) {
+            console.log('change');
+            console.log(data);
+        }
     });
 
+    var button = document.getElementById("send_order");
+    button.onclick = function () {
+        if (DDeliveryWidget.validate()) {
+            alert("send order");
+        } else {
+            alert(DDeliveryWidget.getErrorMsg());
+        }
+    }
 </script>
+
+
 </body>

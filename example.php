@@ -2,7 +2,8 @@
 require_once 'helper.php';
 
 $apiKey = '852af44bafef22e96d8277f3227f0998';
-$sessionId = '{{session ID}}';
+//$sessionId = '{{session ID}}';
+$sessionId = 'a4490d430ad0e4ae1de133e9ebec7cb0';
 $helper = new DDeliveryHelper($apiKey, true);
 
 print_r($helper->getOrder($sessionId));
