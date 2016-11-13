@@ -9,12 +9,18 @@ class DDeliveryHelper
     public $apiKey;
     public $isTest;
 
-    public function __construct($apiKey, $isTest = false)
+    public function __construct($apiKey = null, $isTest = false)
     {
         $this->apiKey = $apiKey;
         $this->isTest = $isTest;
     }
 
+    /**
+     * @param $urlSuf
+     * @param $session
+     * @param array $params
+     * @return array
+     */
     private function request($urlSuf, $session, $params = [])
     {
         $params['session'] = $session;
@@ -34,7 +40,7 @@ class DDeliveryHelper
      * Получение информации о заказе
      *
      * @param $session
-     * @return mixed
+     * @return array
      */
     public function getOrder($session)
     {
@@ -59,7 +65,7 @@ class DDeliveryHelper
      * shop_refnum - CMS order ID,
      * payment_price - sum
      *
-     * @return mixed
+     * @return array
      */
     public function editOrder($session, $params)
     {
@@ -84,7 +90,7 @@ class DDeliveryHelper
      * shop_refnum - CMS order ID,
      * payment_price - sum
      *
-     * @return mixed
+     * @return array
      */
     public function sendOrder($session, $params)
     {
