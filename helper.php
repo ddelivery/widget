@@ -64,11 +64,15 @@ class DDeliveryHelper
      * local_status - CMS status id
      * shop_refnum - CMS order ID,
      * payment_price - sum
-     *
      * @return array
+     *
+     * @throws Exception
      */
     public function editOrder($session, $params)
     {
+        if(!$this->apiKey){
+            throw new Exception('No API - key defined');
+        }
         return $this->request($this->apiKey . '/order-edit.json', $session, $params);
     }
 
@@ -89,11 +93,14 @@ class DDeliveryHelper
      * local_status - CMS status id
      * shop_refnum - CMS order ID,
      * payment_price - sum
-     *
      * @return array
+     * @throws Exception
      */
     public function sendOrder($session, $params)
     {
+        if(!$this->apiKey){
+            throw new Exception('No API - key defined');
+        }
         return $this->request($this->apiKey . '/order-send.json', $session, $params);
     }
 

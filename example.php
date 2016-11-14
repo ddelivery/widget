@@ -9,17 +9,17 @@ $helper = new DDeliveryHelper($apiKey, true);
 print_r($helper->getOrder($sessionId));
 $params = [
     'session' => $sessionId,
-    'to_name' => 'Tor',
-    'to_phone' => '0939813447',
+    'to_name' => 'John Doe',
+    'to_phone' => '+70939813447',
     'shop_refnum' => '124',
-    'to_email' => 'xxxxxx@xxxxx.xx',
+    'to_email' => 'demo@email.ru'
 ];
 print_r($helper->editOrder($sessionId, $params));
 $params = [
     'session' => $sessionId,
-    'to_name' => 'Tox',
-    'to_phone' => '0939813447',
+    'to_name' => 'John Doe',
+    'to_phone' => '+70939813447',
     'shop_refnum' => '124',
-    'to_email' => 'xxxxxx@xxxxx.xx',
+    'to_email' => 'demo@email.ru'
 ];
 print_r($helper->sendOrder($sessionId, $params));
