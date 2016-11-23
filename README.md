@@ -31,15 +31,15 @@
 ```
 var products = [
         {
-            id: '122',
-            name: 'Some piece of products',
-            price: 524,
-            width: 10,
-            height: 10,
-            length: 0,
-            weight: 1,
-            quantity: 2,
-            sku: 'SKU PRODUCT'
+            id: '122', // ID товара в CMS
+            name: 'Some piece of products', // Наименование товаров
+            price: 524, // Цена товара
+            width: 10, // ширина
+            height: 10, высота
+            length: 0, // длина
+            weight: 1, // вес
+            quantity: 2, // количество единиц товара
+            sku: 'SKU PRODUCT' // артикул товара
         },
         {
             id: '123',
@@ -94,6 +94,8 @@ DDeliveryWidget.init('widget', {
         }
     });
 ```
+Идентификатор сессии будет передан в метод change, в параметре client_token.
+
 Валидация выбора доставки в виджете, на странице оформления заказа в CMS  
 ------------------------------------------------------------------------
 На странице оформления заказа необходимо получать информацию о том, выбрал ли пользователь определенный
@@ -137,22 +139,22 @@ Array
     [success] => 1
     [data] => Array
         (
-            [id] => 3258
-            [client_price] => 266.38
-            [company] => 115
-            [company_name] => DPD E-parcel
-            [point] => 
-            [type] => 2
-            [to_name] => 
-            [to_phone] => 
-            [to_email] => 
-            [to_flat] => xxxxxxxxx
-            [to_street] => xxx
-            [to_house] => xxxxxxxxxxxxxx
-            [city_name] => Москва
-            [ddelivery_id] => 
-            [city] => 151184
-            [info] => Курьерская доставка, xxx, xxxxxxxxxxxxxx, xxxxxxxxx, компания: DPD E-parcel, Москва
+            [id] => 3258 
+            [client_price] => 266.38 // цена доставки
+            [company] => 115 //компания доставки
+            [company_name] => DPD E-parcel 
+            [point] => //идентификатор точки
+            [type] => 2 //тип доставки
+            [to_name] => //имя клиента
+            [to_phone] => //телефон клиента
+            [to_email] => //email клиента
+            [to_flat] => xxxxxxxxx //квартира
+            [to_street] => xxx //улица
+            [to_house] => xxxxxxxxxxxxxx //дом
+            [city_name] => Москва //название города
+            [ddelivery_id] => //ID заявки на сервере DD (после отправки заказа)
+            [city] => 151184 //ID города
+            [info] => Курьерская доставка, xxx, xxxxxxxxxxxxxx, xxxxxxxxx, компания: DPD E-parcel, Москва // краткая информация о способе доставки
             [company_info] => Array
                 (
                     [type] => 2
@@ -220,18 +222,18 @@ Array
 
                 )
 
-            [payment_availability] => 1
+            [payment_availability] => 1 //возможность наложенного платежа для вібранной компании
             [packing_price] => 
             [packing_required] => 
             [packing_message] => 
             [packing_paid] => 
             [pickup_warehouse] => 
             [order_id] => 3258
-            [comment] => 
-            [payment_variant] => 
-            [local_status] => 
-            [shop_refnum] => 
-            [payment_price] => 
+            [comment] => // Комментарий к заказу
+            [payment_variant] => // способ оплаты в CMS
+            [local_status] => // статус в CMS 
+            [shop_refnum] => // ID заказа в CMS
+            [payment_price] => // сумма наложенного платежа
         )
 
 )
