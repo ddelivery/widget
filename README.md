@@ -254,6 +254,7 @@ Array
             [local_status] => // статус в CMS 
             [shop_refnum] => // ID заказа в CMS
             [payment_price] => // сумма наложенного платежа
+            [npp_option] => // Признак наложенного платежа (0|1)
         )
 
 )
@@ -278,6 +279,7 @@ $params = [
     'to_phone' => '+70939813447',
     'shop_refnum' => '124',
     'to_email' => 'demo@email.ru'
+    'npp_option' => 1 (признак наложенного платежа. 0 (или можно не передавать эту опцию) - не учитывать, 1 - учитывать)
 ];
 $helper->editOrder($sessionId, $params);
 ```
@@ -389,7 +391,8 @@ Array
             [payment_variant] => 
             [local_status] => 
             [shop_refnum] => 124
-            [payment_price] => 
+            [payment_price] =>
+            [npp_option] => // Признак наложенного платежа (0|1)
         )
 
 )
@@ -404,6 +407,7 @@ $params = [
         'to_phone' => '+70939813447',
         'shop_refnum' => '124',
         'to_email' => 'demo@email.ru'
+        'npp_option' => 1 (признак наложенного платежа. 0 (или можно не передавать эту опцию) - не учитывать, 1 - учитывать)
 ];
 print_r($helper->sendOrder($sessionId, $params));
 ```
@@ -508,7 +512,8 @@ Array
             [payment_variant] => 
             [local_status] => 
             [shop_refnum] => 124
-            [payment_price] => 
+            [payment_price] =>
+            [npp_option] => // Признак наложенного платежа (0|1)
         )
 
 )
